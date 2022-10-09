@@ -1,0 +1,8 @@
+h1.warning {
+    color: red;    
+  }
+
+button {
+    display: block;     
+    margin-bottom: 40px;    
+}

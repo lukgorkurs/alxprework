@@ -4,6 +4,19 @@
 // 2. Przy uzyciu funkcji filter, wyszukaj elementy, ktore maja w swojej nazwie ciag znakow 'er'
 // 3. Przy uzyciu funkcji map, stworz tablice zawierajaca ile jest liter w nazwie ksiazki
 
+
+const isInString = (string,phrase) => {
+      return string.includes(phrase);
+}
+
+
+//PURE FUNCTION
+const filterElements = (collection,phrase) => {
+    return collection.filter(element => {
+        return element.name.includes(phrase)
+    })
+
+
 const books = [
     {
       name: "Harry Potter",
@@ -42,7 +55,19 @@ books
         console.log(`${book.name}`) 
     });
 
+    console.log(`2. Przy uzyciu funkcji filter, wyszukaj elementy, ktore maja w swojej nazwie ciag znakow 'er'`);
+    books
+      .filter(book => isInString(book.name,'er'))
+      .forEach(book => {
+            console.log(`${book.name}`) 
+        });
+
+
+
 console.log(`3. Przy uzyciu funkcji map, stworz tablice zawierajaca ile jest liter w nazwie ksiazki`);
 
 const map1 = books.map(books => books.name.length);
+
 console.log(map1);
+
+
